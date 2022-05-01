@@ -1,12 +1,13 @@
 package kpfu.itis.valisheva.android_app_2.domain.repositories
 
+import io.reactivex.rxjava3.core.Single
 import kpfu.itis.valisheva.android_app_2.domain.entities.AnimeFullInfo
 import kpfu.itis.valisheva.android_app_2.domain.entities.AnimeShortInfo
 
 interface AnimeRepository {
 
-    suspend fun getAnimeById(int: Int): AnimeFullInfo
-    suspend fun getAnimeByName(name: String) : ArrayList<AnimeShortInfo>
-    suspend fun getTopAnime(): ArrayList<AnimeShortInfo>
+    fun getAnimeById(int: Int): Single<AnimeFullInfo>
+    fun getAnimeByName(name: String) : Single<MutableList<AnimeShortInfo>>
+    fun getTopAnime(): Single<MutableList<AnimeShortInfo>>
 
 }

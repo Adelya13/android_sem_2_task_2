@@ -6,6 +6,7 @@ import kpfu.itis.valisheva.android_app_2.data.responses.main.AnimeListResponse
 import kpfu.itis.valisheva.android_app_2.data.responses.main.AnimeResponse
 import kpfu.itis.valisheva.android_app_2.domain.entities.AnimeFullInfo
 import kpfu.itis.valisheva.android_app_2.domain.entities.AnimeShortInfo
+import javax.inject.Inject
 
 class AnimeMapper {
 
@@ -18,14 +19,14 @@ class AnimeMapper {
         genres = convertGenre(response.genres)
     )
 
-    fun mapAnimeList(response: AnimeListResponse) : ArrayList<AnimeShortInfo>{
+    fun mapAnimeList(response: AnimeListResponse) : MutableList<AnimeShortInfo>{
         return convertAnimeList(response.animeList)
     }
 
 
 
-    private fun convertAnimeList(respAnime : ArrayList<AnimeShortInfoResp>): ArrayList<AnimeShortInfo>{
-        val anime: ArrayList<AnimeShortInfo> = arrayListOf()
+    private fun convertAnimeList(respAnime : MutableList<AnimeShortInfoResp>): MutableList<AnimeShortInfo>{
+        val anime: MutableList<AnimeShortInfo> = mutableListOf()
 
         respAnime.forEach{
             anime.add(
@@ -40,8 +41,8 @@ class AnimeMapper {
         return anime
     }
 
-    private fun convertGenre(genreRespList : ArrayList<Genre>): ArrayList<String>{
-        var genre: ArrayList<String> = arrayListOf()
+    private fun convertGenre(genreRespList : MutableList<Genre>): MutableList<String>{
+        var genre: MutableList<String> = mutableListOf()
         genreRespList.forEach{
             genre.add(it.name)
         }

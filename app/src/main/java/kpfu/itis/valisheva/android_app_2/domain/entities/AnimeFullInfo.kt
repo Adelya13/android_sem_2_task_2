@@ -6,5 +6,5 @@ data class AnimeFullInfo (
     val score: Double,
     val status: String,
     val rating: String,
-    val genres: ArrayList<String>,
+    val genres: MutableList<String>,
 )

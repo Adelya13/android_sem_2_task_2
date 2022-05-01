@@ -61,6 +61,11 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.4.1'
     implementation 'androidx.navigation:navigation-ui-ktx:2.4.1'
 
+    //RxJava
+    implementation "io.reactivex.rxjava3:rxjava:3.1.4"
+    implementation 'io.reactivex.rxjava3:rxkotlin:3.0.1'
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+
     //Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
@@ -80,10 +85,16 @@ dependencies {
 
     //dagger
     def dagger = "2.41"
-//    implementation "com.google.dagger:dagger:${dagger}"
-//    kapt "com.google.dagger:dagger-compiler:${dagger}"
     implementation "com.google.dagger:hilt-android:${dagger}"
     kapt "com.google.dagger:hilt-android-compiler:${dagger}"
+
+    //moxy
+    def moxy = "2.2.2"
+    implementation "com.github.moxy-community:moxy:$moxy"
+    implementation "com.github.moxy-community:moxy-androidx:$moxy"
+    implementation "com.github.moxy-community:moxy-ktx:$moxy"
+    kapt "com.github.moxy-community:moxy-compiler:$moxy"
+
 
 
 }
