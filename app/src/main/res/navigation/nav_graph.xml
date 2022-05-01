@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/animeListFragment">
+
+    <fragment
+        android:id="@+id/animeListFragment"
+        android:name="kpfu.itis.valisheva.android_app_2.presentation.fragments.AnimeListFragment"
+        android:label="AnimeListFragment" >
+        <action
+            android:id="@+id/action_animeListFragment_to_animeInformationFragment"
+            app:destination="@id/animeInformationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/animeInformationFragment"
+        android:name="kpfu.itis.valisheva.android_app_2.presentation.fragments.AnimeInformationFragment"
+        android:label="AnimeInformationFragment" >
+        <action
+            android:id="@+id/action_animeInformationFragment_to_animeListFragment"
+            app:destination="@id/animeListFragment" />
+    </fragment>
+</navigation>
