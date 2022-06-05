@@ -86,6 +86,7 @@ class AnimeListFragment: MvpAppCompatFragment(R.layout.fragment_anime_list), Ani
         }
 
     }
+
     private fun initRV(){
         val decorator = DividerItemDecoration(requireContext(), RecyclerView.VERTICAL)
         val spacing = SpaceItemDecorator(requireContext())

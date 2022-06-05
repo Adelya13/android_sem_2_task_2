@@ -23,7 +23,13 @@ class AnimeMapper {
         return convertAnimeList(response.animeList)
     }
 
-
+    private fun convertGenre(genreRespList : MutableList<Genre>): MutableList<String>{
+        var genre: MutableList<String> = mutableListOf()
+        genreRespList.forEach{
+            genre.add(it.name)
+        }
+        return genre
+    }
 
     private fun convertAnimeList(respAnime : MutableList<AnimeShortInfoResp>): MutableList<AnimeShortInfo>{
         val anime: MutableList<AnimeShortInfo> = mutableListOf()
@@ -39,13 +45,5 @@ class AnimeMapper {
             )
         }
         return anime
-    }
-
-    private fun convertGenre(genreRespList : MutableList<Genre>): MutableList<String>{
-        var genre: MutableList<String> = mutableListOf()
-        genreRespList.forEach{
-            genre.add(it.name)
-        }
-        return genre
     }
 }

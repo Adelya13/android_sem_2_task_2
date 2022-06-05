@@ -18,13 +18,13 @@ class AnimeRepositoryImpl @Inject constructor(
             animeMapper.mapAnimeInfo(it)
         }
 
-    override fun getAnimeByName(name: String): Single<MutableList<AnimeShortInfo>> =
-        api.getAnimeByName(name).map {
+    override fun getTopAnime(): Single<MutableList<AnimeShortInfo>> =
+        api.getTopAnime().map{
             animeMapper.mapAnimeList(it)
         }
 
-    override fun getTopAnime(): Single<MutableList<AnimeShortInfo>> =
-        api.getTopAnime().map{
+    override fun getAnimeByName(name: String): Single<MutableList<AnimeShortInfo>> =
+        api.getAnimeByName(name).map {
             animeMapper.mapAnimeList(it)
         }
 
